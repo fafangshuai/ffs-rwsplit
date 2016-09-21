@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ffs.platform.mapper.PersonMapper">
+
+    <insert id="insert" parameterType="Person" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO person ( name, age )
+        VALUES ( #{name}, #{age} )
+    </insert>
+    <delete id="delete" parameterType="int">
+        delete from person where id = #{id}
+    </delete>
+    <update id="update" parameterType="Person">
+        UPDATE person
+        <set>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="age != null">
+                age = #{age}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    <select id="getById" resultType="Person">
+        SELECT id, name, age
+        FROM person
+        WHERE id = #{id}
+    </select>
+    <select id="getList" resultType="Person">
+        SELECT id, name, age
+        FROM person
+        ORDER BY id DESC
+    </select>
+
+</mapper>

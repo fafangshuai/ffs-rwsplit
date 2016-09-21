@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTDConfig 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!-- 配置映射文件   -->
+<configuration>
+	<properties>    
+		<property name="dialect" value="mysql"/>    
+	</properties>
+	<settings>
+		<setting name="logImpl" value="SLF4J"/>
+	</settings>	
+    <typeAliases>
+    </typeAliases>
+    <mappers>
+    </mappers>
+</configuration>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration shutdownHook="disable">
+    <Properties>
+        <property name="pattern">%date{yyyy-MM-dd HH:mm:ss} [%-5level] %logger{*.*..} - %msg%n%ex</property>
+        <!--<property name="pattern">%date{yyyy-MM-dd HH:mm:ss} [%-5level] %class.%method(%file:%line) - %msg%n%ex</property>-->
+    </Properties>
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${pattern}"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="console"/>
+        </Root>
+        <Logger name="org.springframework" level="INFO">
+        </Logger>
+    </Loggers>
+</Configuration>
